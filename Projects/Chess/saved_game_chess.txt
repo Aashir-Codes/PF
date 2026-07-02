@@ -1,0 +1,9 @@
+0
+R N B Q K N B R 
+P P P . P P P P 
+. . . . . . . . 
+. B . . . . . . 
+. B . . p . . . 
+. . . . . . . . 
+p p p p . p p P 
+r . . . k n b . 
