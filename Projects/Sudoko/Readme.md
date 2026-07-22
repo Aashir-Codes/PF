@@ -1,24 +1,51 @@
 # Sudoku Game
 
-A console-based Sudoku game written in C++.
+A Sudoku game written in C++ with two frontends: a raylib GUI and the original console version. All game rules live in `sudoku_game.h` / `sudoku_game.cpp`, shared by both.
 
-## Features
-- Load Sudoku puzzles from file
-- Interactive gameplay
-- Input validation
-- Win/lose conditions
+## GUI Version (raylib)
 
-## How to Run
-1. Compile: `g++ sudoku.cpp -o sudoku`
-2. Create an `input.txt` file with a 9x9 Sudoku puzzle (use 0 for empty cells)
-3. Run: `./sudoku`
+### Build & Run
+```
+g++ sudoku_gui.cpp sudoku_game.cpp -o sudoku_gui -lraylib -lm -lpthread -ldl -lX11
+./sudoku_gui
+```
 
-## Game Rules
-- Enter row, column, and value (1-9)
-- You have 10 attempts
-- Enter 10 to quit
+### Controls
+- Click a cell to select it (arrow keys also move the selection)
+- Type `1`-`9` to place a number, `Backspace`/`Delete` to erase your own numbers
+- Gray cells are given and cannot be changed
+- A wrong number costs one attempt — you have 10
 
-## Sample Input File Format
+### Main Menu
+**New Game** · **Load Old Game** (restores `savegame.txt`) · **How to Play** · **Quit**
+
+The only button on the board itself is **Save Game**; `ESC` returns to the menu.
+
+### Shortcuts
+| Action | Button | Key |
+|---|---|---|
+| New game (random built-in puzzle) | New Game | `N` |
+| Load saved game (`savegame.txt`) | Load Old Game | `L` |
+| Save current game | Save Game | `S` |
+| Instructions | How to Play | `H` |
+| Back to menu | — | `ESC` |
+| Fullscreen toggle | — | `F11` |
+| Sound on/off | — | `U` |
+
+You can also **drag & drop** a puzzle or save `.txt` file onto the window to load it.
+Minimize/maximize/close use the normal OS title bar; the window is freely resizable and the board scales with it.
+
+## Console Version
+
+```
+g++ sudoko.cpp sudoku_game.cpp -o sudoku
+./sudoku
+```
+Enter row, column, and value (1-9). Enter 10 to quit.
+
+## Puzzle File Format
+
+81 digits, `0` = empty cell. Whitespace/newlines are ignored:
 ```
 530070000
 600195000
@@ -30,21 +57,7 @@ A console-based Sudoku game written in C++.
 000419005
 000080079
 ```
-```
 
-## Step 5: Create .gitignore File
-
-Create a file named `.gitignore`:
-```
-# Executables
-*.exe
-*.out
-sudoku
-
-# Input files (optional - remove if you want to include it)
-input.txt
-
-# IDE files
-.vscode/
-.idea/
-*.o
+## Assets
+- Sound effects: [Kenney Interface Sounds](https://kenney.nl/assets/interface-sounds) (CC0 / public domain)
+- Font: [Poppins](https://fonts.google.com/specimen/Poppins) (SIL Open Font License)

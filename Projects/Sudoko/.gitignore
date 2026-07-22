@@ -1,0 +1,17 @@
+# The repository-root .gitignore ignores everything ('*') and then whitelists
+# only a few source extensions (*.cpp, *.h, *.txt, *.md, *.ttf, *.wav, ...).
+# That silently drops this project's .ogg sound effects. Re-include the assets
+# a fresh clone needs so the game actually loads them.
+
+!.gitignore
+!*.md
+!*.ogg
+!*.ttf
+
+# Build artifacts (sudoku_gui, sudoku) and object files have no whitelisted
+# extension, so the root '*' already ignores them. Runtime save state is a
+# .txt (whitelisted), so ignore it explicitly:
+savegame.txt
+
+# Local tooling / editor state
+.claude/
