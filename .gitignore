@@ -1,0 +1,15 @@
+*
+!*/
+!*.cpp
+!*.h
+!*.txt
+!*.png
+!*.svg
+!*.sh
+!*.md
+!*.ttf
+!*.wav
+!*.py
+!.gitignore
+!CMakeLists.txt
+!Makefile
