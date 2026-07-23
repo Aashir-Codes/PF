@@ -1,15 +1,31 @@
-*
-!*/
-!*.cpp
-!*.h
-!*.txt
-!*.png
-!*.svg
-!*.sh
-!*.md
-!*.ttf
-!*.wav
-!*.py
-!.gitignore
-!CMakeLists.txt
-!Makefile
+# ---- Compiled executables & object files ----
+*.o
+*.obj
+*.exe
+*.out
+*.app
+a.out
+*.gch
+*.pch
+
+# ---- Build directories ----
+build/
+bin/
+obj/
+cmake-build-*/
+
+# ---- Editor / IDE ----
+.idea/
+.vscode/
+*.iml
+*.suo
+*.user
+*.sln
+*.vcxproj*
+
+# ---- Claude Code local config ----
+.claude/
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
